@@ -1,0 +1,41 @@
+"                                ___           ___           ___     
+"       ___        ___          /__/\         /  /\         /  /\    
+"      /__/\      /  /\        |  |::\       /  /::\       /  /:/    
+"      \  \:\    /  /:/        |  |:|:\     /  /:/\:\     /  /:/     
+"       \  \:\  /__/::\      __|__|:|\:\   /  /:/~/:/    /  /:/  ___ 
+"   ___  \__\:\ \__\/\:\__  /__/::::| \:\ /__/:/ /:/___ /__/:/  /  /\
+"  /__/\ |  |:|    \  \:\/\ \  \:\~~\__\/ \  \:\/:::::/ \  \:\ /  /:/
+"  \  \:\|  |:|     \__\::/  \  \:\        \  \::/~~~~   \  \:\  /:/ 
+"   \  \:\__|:|     /__/:/    \  \:\        \  \:\        \  \:\/:/  
+"    \  \::::/      \__\/      \  \:\        \  \:\        \  \::/   
+"     \__\__/                   \__\/         \__\/         \__\/    
+
+set shell=/bin/bash
+
+" must be done before bundle
+let g:ale_completion_enabled = 1
+nnoremap <silent> K :ALEHover<CR>
+nnoremap <silent> gd :ALEGoToDefinition<CR>
+nnoremap <M-LeftMouse> <LeftMouse>:ALEGoToDefinition<CR>
+
+" show type on hover
+if v:version >= 801
+  set ballooneval
+  set balloonevalterm
+  let g:ale_set_balloons = 1
+endif
+
+source ~/.vim/includes/general.vim
+source ~/.vim/includes/plug.vim
+source ~/.vim/includes/fzf.vim
+source ~/.vim/includes/mappings.vim
+source ~/.vim/includes/ale.vim
+"source ~/.vim/includes/lightline.vim
+"source ~/.vim/includes/easy-motion.vim
+
+:au FocusGained * :redraw!
+
+colorscheme molokai
+if filereadable("$HOME/.extras.vim") == 1
+    source ~/.extras.vim
+endif

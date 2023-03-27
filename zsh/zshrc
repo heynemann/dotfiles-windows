@@ -1,0 +1,33 @@
+#      ___           ___           ___           ___           ___     
+#     /  /\         /  /\         /__/\         /  /\         /  /\    
+#    /  /::|       /  /:/_        \  \:\       /  /::\       /  /:/    
+#   /  /:/:|      /  /:/ /\        \__\:\     /  /:/\:\     /  /:/     
+#  /  /:/|:|__   /  /:/ /::\   ___ /  /::\   /  /:/~/:/    /  /:/  ___ 
+# /__/:/ |:| /\ /__/:/ /:/\:\ /__/\  /:/\:\ /__/:/ /:/___ /__/:/  /  /\
+# \__\/  |:|/:/ \  \:\/:/~/:/ \  \:\/:/__\/ \  \:\/:::::/ \  \:\ /  /:/
+#     |  |:/:/   \  \::/ /:/   \  \::/       \  \::/~~~~   \  \:\  /:/ 
+#     |  |::/     \__\/ /:/     \  \:\        \  \:\        \  \:\/:/  
+#     |  |:/        /__/:/       \  \:\        \  \:\        \  \::/   
+#     |__|/         \__\/         \__\/         \__\/         \__\/    
+
+# Homebrew
+if [ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
+    export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+fi
+
+export PATH="/home/heynemann/.local/bin:$PATH"
+
+source ~/.zsh/general.zsh
+source ~/.zsh/bundles.zsh
+source ~/.zsh/starship.zsh
+
+if [ -f "~/.alias.zsh" ]
+then
+	source ~/.alias.zsh
+fi
+
+if [ -f "~/.local.zsh" ]
+then
+	source ~/.local.zsh
+fi

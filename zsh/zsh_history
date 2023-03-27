@@ -1,0 +1,7 @@
+: 1679876182:0;cd dev
+: 1679876183:0;ls
+: 1679876186:0;cd dotfiles-windows
+: 1679876188:0;ls
+: 1679876189:0;git status
+: 1679876681:0;ls -lah ~
+: 1679877477:0;sheldon add zsh-diff-so-fancy --github z-shell/zsh-diff-so-fancy

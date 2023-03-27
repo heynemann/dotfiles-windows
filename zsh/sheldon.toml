@@ -1,0 +1,12 @@
+
+[plugins.zsh-256color]
+github = 'chrissicool/zsh-256color'
+
+[plugins.zsh-autosuggestions]
+github = 'zsh-users/zsh-autosuggestions'
+
+[plugins.zsh-alias-finder]
+github = 'akash329d/zsh-alias-finder'
+
+[plugins.zsh-diff-so-fancy]
+github = 'z-shell/zsh-diff-so-fancy'
