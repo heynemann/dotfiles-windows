@@ -19,6 +19,7 @@ fi
 export PATH="/home/heynemann/.local/bin:$PATH"
 
 source ~/.zsh/general.zsh
+source ~/.zsh/alias.zsh
 source ~/.zsh/bundles.zsh
 source ~/.zsh/starship.zsh
 
@@ -31,3 +32,5 @@ if [ -f "~/.local.zsh" ]
 then
 	source ~/.local.zsh
 fi
+
+export PATH="~/.bin:$PATH"

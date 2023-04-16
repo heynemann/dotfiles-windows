@@ -2,6 +2,7 @@ SHELL=/bin/bash
 PWD=$(shell pwd)
 ZSHPATH=$(shell which zsh)
 ZSHINSHELLS=$(shell grep ${ZSHPATH} /etc/shells)
+TPM_DIR = $(HOME)/.tmux/plugins/tpm
 
 setup: git-setup zsh-setup vim-setup
 
@@ -51,3 +52,23 @@ vim-symlinks:
 	@ln -s ${PWD}/vim/ ~/.vim
 	@ln -s ${PWD}/vim/vimrc ~/.vimrc
 	@touch ~/.extras.vim
+
+tmux-setup: tmux-plugin-manager tmux-symlinks
+
+tmux-symlinks:
+	@rm -f ~/.tmux.conf
+	@rm -f ~/dev-tmux
+	@mkdir -p ~/.bin
+	@ln -sf ${PWD}/tmux.conf ~/.tmux.conf
+	@ln -sf ${PWD}/dev-tmux ~/.bin/dev-tmux
+	@chmod +x ~/.bin/dev-tmux
+
+.PHONY: tmux-plugin-manager
+tmux-plugin-manager:
+	@if [ ! -d "$(TPM_DIR)" ]; then \
+		git clone https://github.com/tmux-plugins/tpm $(TPM_DIR); \
+		echo "TPM successfully cloned."; \
+	else \
+	  cd ${TPM_DIR}; git pull; cd -; \
+		echo "TPM already exists."; \
+	fi
