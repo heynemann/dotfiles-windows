@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/heynemann/dev/dotfiles-windows/vim'
+let g:netrw_dirhist_2='/home/linuxbrew/.linuxbrew/Homebrew'
+let g:netrw_dirhist_1='/home/heynemann/dev/dotfiles-windows/vim'

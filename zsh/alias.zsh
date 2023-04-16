@@ -4,4 +4,4 @@ function reload() {
 
 alias sz="reload"
 alias ea="vim ~/.alias.zsh;reload"
-alias st="dev-tmux"
+alias st="~/.bin/dev-tmux"

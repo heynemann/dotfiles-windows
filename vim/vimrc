@@ -30,6 +30,7 @@ source ~/.vim/includes/plug.vim
 source ~/.vim/includes/fzf.vim
 source ~/.vim/includes/mappings.vim
 source ~/.vim/includes/ale.vim
+source ~/.vim/includes/tmux.vim
 "source ~/.vim/includes/lightline.vim
 "source ~/.vim/includes/easy-motion.vim
 

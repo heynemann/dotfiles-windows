@@ -7,13 +7,6 @@ set number
 "To insert space characters whenever the tab key is pressed, set the 'expandtab' option
 set expandtab
 
-"Use system-wide clipboard
-if has('macunix')
-  set clipboard=unnamed
-else
-  set clipboard=unnamedplus
-endif
-
 "Allow usage of comma as well as ;
 let mapleader = ','
 

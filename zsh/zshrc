@@ -33,4 +33,4 @@ then
 	source ~/.local.zsh
 fi
 
-export PATH="~/.bin:$PATH"
+export PATH="/home/heynemann/.bin:$PATH"
