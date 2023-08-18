@@ -35,7 +35,7 @@ let g:ale_linters = {
   \   'typescript': ['tslint', 'typecheck', 'tsserver'],
   \   'typescript.tsx': ['tslint', 'typecheck', 'tsserver'],
   \   'javascript.jsx': ['eslint'],
-  \   'rust': ['cargo'],
+  \   'rust': ['analyzer', 'cargo', 'cspell', 'rls', 'rustc'],
   \   'spec': [],
   \   'text': [],
   \   'sh': [],
@@ -90,6 +90,7 @@ let g:ale_fixers = {
 \   ],
 \   'sh': [],
 \   'go': ['gofmt', 'goimports'],
+\   'rust': ['trim_whitespace', 'remove_trailing_lines', 'rustfmt'],
 \   'cs': [
 \       'remove_trailing_lines',
 \       'trim_whitespace'

@@ -24,3 +24,6 @@ Plug 'elzr/vim-json'
 
 " Golang
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+" Rust
+Plug 'rust-lang/rust.vim'
