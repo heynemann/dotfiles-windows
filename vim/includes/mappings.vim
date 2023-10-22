@@ -59,3 +59,5 @@ set nofoldenable    " disable folding
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
+
+set clipboard^=unnamed,unnamedplus " Use same clipboard as macOS/Linux

@@ -34,7 +34,7 @@ zsh-symlinks:
 	@ln -s ${PWD}/zsh/zshrc ~/.zshrc
 	@ln -sf ${PWD}/zsh/zsh_history ~/.zsh_history
 	@rm -f ~/.config/sheldon/plugins.toml
-	@ln -s ${PWD}/zsh/sheldon.toml ~/.config/sheldon/plugins.toml 
+	@ln -s ${PWD}/zsh/sheldon.toml ~/.config/sheldon/plugins.toml
 	@rm -f ~/.config/starship.toml
 	@ln -s ${PWD}/zsh/starship.toml ~/.config/starship.toml
 	@rm -f ~/.alias.zsh
@@ -49,8 +49,10 @@ vim-brew:
 vim-symlinks:
 	@rm -f ~/.vim
 	@rm -f ~/.vimrc
+	@rm -f ~/.config/nvim/init.vim
 	@ln -s ${PWD}/vim/ ~/.vim
 	@ln -s ${PWD}/vim/vimrc ~/.vimrc
+	@ln -s ${PWD}/vim/init.vim ~/.config/nvim/init.vim
 	@touch ~/.extras.vim
 
 tmux-setup: tmux-plugin-manager tmux-symlinks

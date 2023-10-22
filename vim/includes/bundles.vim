@@ -11,8 +11,12 @@ Plug 'itchyny/lightline.vim'
 Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'maximbaz/lightline-ale'
 
+" Tree
+Plug 'sayanarijit/xplr.vim'
+
 " Syntax
 Plug 'w0rp/ale'
+Plug 'ryanoasis/vim-devicons'
 
 " Coding
 Plug 'tpope/vim-fugitive'

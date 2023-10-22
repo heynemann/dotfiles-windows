@@ -31,6 +31,7 @@ let g:ale_linters = {
   \   'perl': ['perlcritic'],
   \   'json': ['jq'],
   \   'yaml': ['yamllint'],
+	\   'make': ['checkmake'],
   \   'javascript': ['eslint'],
   \   'typescript': ['tslint', 'typecheck', 'tsserver'],
   \   'typescript.tsx': ['tslint', 'typecheck', 'tsserver'],
@@ -89,12 +90,13 @@ let g:ale_fixers = {
 \       'trim_whitespace'
 \   ],
 \   'sh': [],
-\   'go': ['gofmt', 'goimports'],
+\   'go': ['golines', 'gofumpt', 'goimports'],
 \   'rust': ['trim_whitespace', 'remove_trailing_lines', 'rustfmt'],
 \   'cs': [
 \       'remove_trailing_lines',
 \       'trim_whitespace'
-\   ]
+\   ],
+\   'make': ['trim_whitespace', 'remove_trailing_lines']
 \}
 
 let g:ale_typescript_tslint_use_global = 0
@@ -111,6 +113,7 @@ let g:ale_completion_autoimport = 1
 nnoremap <silent> gr :ALEFindReferences<CR>
 nnoremap <silent> gd :ALEGoToDefinition<CR>
 nnoremap <silent> gt :ALEGoToTypeDefinition<CR>
+nnoremap <silent> gf :ALEGoToDefinition -tab<CR>
 
 let g:ale_python_pylsp_config={
 \   'pylsp': {
@@ -145,3 +148,4 @@ let g:ale_python_pylsp_config={
 " \     },
 " \   },
 " \}
+let g:ale_go_goimports_executable = 'gosimports'

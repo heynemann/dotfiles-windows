@@ -1,6 +1,8 @@
 set shiftwidth=4
 set softtabstop=4
 
+set paste
+
 "Display line numbers
 set number
 
@@ -150,3 +152,19 @@ set sessionoptions-=help
 
 syntax on
 set background=dark
+
+if !has('nvim')
+  set clipboard=unnamed-plus
+  "let g:clipboard = {
+          "\   'name': 'win32yank_nvim',
+          "\   'copy': {
+          "\      '+': 'win32yank.exe -i --crlf',
+          "\      '*': 'win32yank.exe -i --crlf',
+          "\    },
+          "\   'paste': {
+          "\      '+': 'win32yank.exe -o --lf',
+          "\      '*': 'win32yank.exe -o --lf',
+          "\   },
+          "\   'cache_enabled': 1,
+          "\ }
+endif

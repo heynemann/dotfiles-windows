@@ -126,3 +126,5 @@ bindkey "^[[F" end-of-line
 
 # Del
 bindkey "^[[3~" delete-char
+
+ulimit -n 256000
