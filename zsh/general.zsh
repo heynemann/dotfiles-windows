@@ -76,6 +76,7 @@ zstyle ':completion:*:cd:*' ignore-parents parent pwd
 export WORDCHARS='*?[]~&;!$%^<>'
 
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="$(brew --prefix)/bin:$PATH"
 
 f () {
     TF_PREVIOUS=$(fc -ln -1 | tail -n 1);

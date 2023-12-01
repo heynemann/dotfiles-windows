@@ -13,7 +13,7 @@ function! Yank(timer)
     redraw!
 endfunction
 
-let g:yank_debounce_time_ms = 500
+let g:yank_debounce_time_ms = 100
 let g:yank_debounce_timer_id = -1
 
 function! YankDebounced()

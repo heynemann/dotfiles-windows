@@ -10,3 +10,6 @@ github = 'akash329d/zsh-alias-finder'
 
 [plugins.zsh-diff-so-fancy]
 github = 'z-shell/zsh-diff-so-fancy'
+
+[plugins.fzf-zsh-plugin]
+github = 'unixorn/fzf-zsh-plugin'

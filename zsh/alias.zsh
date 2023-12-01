@@ -68,7 +68,7 @@ gca() {
   fi
 
   AUTHOR=$(git show -s --format='%ae' HEAD)
-  ME="$GITHUB_USER"
+  ME="heynemann@gmail.com"
   if [ "$ME" != "$AUTHOR" ]; then
     echo "Can't run gca if the last commit is not yours! You would change someone else's commit and it does 'git push -f'! Aborting..."
 
@@ -265,6 +265,7 @@ alias de="docker-ps-fzf | xargs echo -n | awk '{ print \$1 \" /bin/bash\"}' | xa
 alias docker-rm='docker rm --force $(docker ps --all -q) && docker rmi --force $(docker images --all -q)'
 alias docker-nuke='docker system prune --all --force --volumes'
 alias docker-prune='docker system prune --all --force --volumes'
+alias docker-wsl-fix='sudo rm -rf /mnt/wsl/docker-desktop-bind-mounts/Ubuntu/*'
 
 compose-ps-fzf () {
   docker-compose ps | fzf +m --layout=reverse --header-lines=1 --preview-window=right,50%,cycle --preview="docker inspect {1} | bat --color always -l json --plain" | awk '{print $1}'
@@ -425,3 +426,8 @@ git-is-merged () {
 }
 
 alias tmux-stop="tmux ls | awk ' { print \$1 } ' | sed s/:// | xargs -I{} -- tmux kill-session -t {}"
+
+alias vim='nvim'
+alias open='wslview'
+
+alias nsx-ghtoken='export GITHUB_TOKEN=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'

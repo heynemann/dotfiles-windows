@@ -60,4 +60,17 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
-set clipboard^=unnamed,unnamedplus " Use same clipboard as macOS/Linux
+"set clipboard^=unnamed,unnamedplus " Use same clipboard as macOS/Linux
+nnoremap <silent> <Leader><Leader> :source $MYVIMRC<cr>
+imap <C-d> <Plug>(copilot-accept)
+imap <silent> <C-a> <Plug>(copilot-next)
+imap <silent> <C-s> <Plug>(copilot-previous)
+imap <silent> <C-\> <Plug>(copilot-dismiss)
+
+function! s:KillGoPls()
+  let l:cmd = "ps aux | grep gopls | egrep -v grep | awk ' { print $2 } ' |  xargs kill -9"
+  call system(l:cmd)
+endfunction
+
+map <silent><F10> :call <sid>KillGoPls()<cr>
+map <silent>- :NvimTreeFindFileToggle<cr>

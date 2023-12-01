@@ -15,6 +15,7 @@ set shell=/bin/bash
 " must be done before bundle
 let g:ale_completion_enabled = 1
 nnoremap <silent> K :ALEHover<CR>
+nnoremap <silent> gk :ALEHover<CR>
 nnoremap <silent> gd :ALEGoToDefinition<CR>
 nnoremap <M-LeftMouse> <LeftMouse>:ALEGoToDefinition<CR>
 
@@ -31,9 +32,16 @@ source ~/.vim/includes/fzf.vim
 source ~/.vim/includes/mappings.vim
 source ~/.vim/includes/ale.vim
 source ~/.vim/includes/tmux.vim
-source ~/.vim/includes/xplr.vim
+source ~/.vim/includes/projectionist.vim
 "source ~/.vim/includes/lightline.vim
 "source ~/.vim/includes/easy-motion.vim
+
+source ~/.vim/includes/go.vim
+
+"if has('nvim')
+  "source ~/.vim/includes/copilot.lua
+"endif
+"
 
 :au FocusGained * :redraw!
 

@@ -1,8 +1,6 @@
 set shiftwidth=4
 set softtabstop=4
 
-set paste
-
 "Display line numbers
 set number
 
@@ -129,7 +127,9 @@ set sidescrolloff=15    " Number of cols from horizontal edge to start scrolling
 set sidescroll=1        " Number of cols to scroll at a time
 
 filetype plugin indent on
+autocmd Filetype sh setlocal ts=4 sw=4 sts=0 expandtab
 autocmd Filetype cs setlocal ts=4 sw=4 sts=0 expandtab
+autocmd Filetype go setlocal ts=4 sw=4 sts=0 expandtab
 autocmd Filetype cpp setlocal ts=2 sw=2 sts=0 expandtab
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=0 expandtab
 autocmd FileType javascript set formatprg=prettier\ --single-quote\ --trailing-comma\ --stdin
@@ -142,6 +142,7 @@ autocmd Filetype yaml.docker-compose setlocal ts=2 sw=2 sts=0 expandtab
 autocmd Filetype html setlocal ts=2 sw=2 sts=0 expandtab
 autocmd Filetype htmldjango setlocal ts=2 sw=2 sts=0 expandtab
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
+autocmd Filetype vim setlocal ts=2 sw=2 sts=0 expandtab
 
 autocmd BufWritePre *.py :pclose
 autocmd BufWritePre *.cs :cclose

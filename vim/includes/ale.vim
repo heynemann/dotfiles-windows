@@ -22,15 +22,14 @@ let g:ale_linters = {
   \   'csh': ['shell'],
   \   'cs': ['OmniSharp'],
   \   'cpp': ['gcc', 'cpplint', 'cppcheck', 'flawfinder'],
-  \   'go': ['gofmt', 'gometalinter', 'gopls', 'govet', 'revive'],
-  \   'html': ['tidy'],
+  \   'go': ['golangci-lint', 'gopls'],
+  \   'html': ['tidy', 'eslint'],
   \   'htmldjango': ['tidy'],
   \   'hack': ['hack', 'hhast'],
   \   'python': ['flake8', 'mypy', 'pylsp', 'pylint'],
   \   'help': [],
   \   'perl': ['perlcritic'],
   \   'json': ['jq'],
-  \   'yaml': ['yamllint'],
 	\   'make': ['checkmake'],
   \   'javascript': ['eslint'],
   \   'typescript': ['tslint', 'typecheck', 'tsserver'],
@@ -38,10 +37,12 @@ let g:ale_linters = {
   \   'javascript.jsx': ['eslint'],
   \   'rust': ['analyzer', 'cargo', 'cspell', 'rls', 'rustc'],
   \   'spec': [],
+  \   'proto': ['buf-lint'],
   \   'text': [],
-  \   'sh': [],
-  \   'vim': ['vint'],
-  \   'zsh': ['shell']
+  \   'vim': ['vint', 'vimls'],
+  \   'zsh': ['bashate', 'language_server'],
+  \   'bash': ['bashate', 'language_server'],
+  \   'sh': ['bashate', 'language_server']
 \}
 
 let g:ale_fixers = {
@@ -53,6 +54,11 @@ let g:ale_fixers = {
 \   ],
 \   'hack': [
 \       'hackfmt',
+\   ],
+\   'html': [
+\       'prettier',
+\       'remove_trailing_lines',
+\       'trim_whitespace'
 \   ],
 \   'json': [
 \       'jq',
@@ -89,13 +95,16 @@ let g:ale_fixers = {
 \       'remove_trailing_lines',
 \       'trim_whitespace'
 \   ],
-\   'sh': [],
-\   'go': ['golines', 'gofumpt', 'goimports'],
+\   'sh': ['trim_whitespace', 'remove_trailing_lines','shfmt'],
+\   'bash': ['trim_whitespace', 'remove_trailing_lines','shfmt'],
+\   'zsh': ['trim_whitespace', 'remove_trailing_lines','shfmt'],
+\   'go': ['golines', 'gofumpt', 'goimports', 'gopls'],
 \   'rust': ['trim_whitespace', 'remove_trailing_lines', 'rustfmt'],
 \   'cs': [
 \       'remove_trailing_lines',
 \       'trim_whitespace'
 \   ],
+\   'proto': ['buf-format'],
 \   'make': ['trim_whitespace', 'remove_trailing_lines']
 \}
 
@@ -112,8 +121,9 @@ let g:ale_completion_autoimport = 1
 
 nnoremap <silent> gr :ALEFindReferences<CR>
 nnoremap <silent> gd :ALEGoToDefinition<CR>
-nnoremap <silent> gt :ALEGoToTypeDefinition<CR>
+" nnoremap <silent> gt :ALEGoToTypeDefinition<CR>
 nnoremap <silent> gf :ALEGoToDefinition -tab<CR>
+nnoremap <silent> <F2> :ALERename<CR>
 
 let g:ale_python_pylsp_config={
 \   'pylsp': {
@@ -149,3 +159,12 @@ let g:ale_python_pylsp_config={
 " \   },
 " \}
 let g:ale_go_goimports_executable = 'gosimports'
+let g:ale_go_goimports_options = '-local github.com/NSXBet'
+
+let g:ale_go_golangci_lint_package = 1
+let g:go_fmt_command = 'gosimports'
+
+imap <silent> <C-a> <Plug>(copilot-next)
+imap <silent> <C-s> <Plug>(copilot-previous)
+imap <silent> <C-\> <Plug>(copilot-dismiss)
+let NERDSpaceDelims=1
