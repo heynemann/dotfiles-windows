@@ -1,12 +1,18 @@
 " ALE
 
 let g:ale_linters_explicit = 1
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_enter = 0
-let g:ale_lint_on_insert_leave = 1
+" let g:ale_lint_on_text_changed = 'never'
+" let g:ale_lint_on_enter = 0
+" let g:ale_lint_on_insert_leave = 1
 let g:ale_sign_warning = '▲'
 let g:ale_sign_error = '✗'
 let g:ale_fix_on_save = 1
+" let g:ale_lint_on_save = 'normal'
+" let g:ale_lint_on_enter = 'normal'
+" let g:ale_lint_on_insert_leave = 'normal'
+" let g:ale_lint_on_text_changed = 'normal'
+" let g:ale_lint_delay = 200
+
 highlight link ALEWarningSign String
 highlight link ALEErrorSign Title
 
@@ -32,14 +38,16 @@ let g:ale_linters = {
   \   'json': ['jq'],
 	\   'make': ['checkmake'],
   \   'javascript': ['eslint'],
-  \   'typescript': ['tslint', 'typecheck', 'tsserver'],
-  \   'typescript.tsx': ['tslint', 'typecheck', 'tsserver'],
+  \   'typescript': ['eslint', 'typecheck', 'tsserver'],
+  \   'typescript.tsx': ['eslint', 'typecheck', 'tsserver'],
   \   'javascript.jsx': ['eslint'],
+  \   'typescriptreact': ['eslint', 'typecheck', 'tsserver'],
   \   'rust': ['analyzer', 'cargo', 'cspell', 'rls', 'rustc'],
   \   'spec': [],
   \   'proto': ['buf-lint'],
   \   'text': [],
   \   'vim': ['vint', 'vimls'],
+  \   'yaml': ['yamllint'],
   \   'zsh': ['bashate', 'language_server'],
   \   'bash': ['bashate', 'language_server'],
   \   'sh': ['bashate', 'language_server']
@@ -61,7 +69,7 @@ let g:ale_fixers = {
 \       'trim_whitespace'
 \   ],
 \   'json': [
-\       'jq',
+\       'prettier',
 \       'remove_trailing_lines',
 \       'trim_whitespace'
 \   ],
@@ -76,12 +84,17 @@ let g:ale_fixers = {
 \       'trim_whitespace'
 \   ],
 \   'typescript': [
-\	'prettier',
+\	      'prettier',
 \       'remove_trailing_lines',
 \       'trim_whitespace'
 \   ],
 \   'typescript.tsx': [
-\	'prettier',
+\	      'prettier',
+\       'remove_trailing_lines',
+\       'trim_whitespace'
+\   ],
+\   'typescriptreact': [
+\	      'prettier',
 \       'remove_trailing_lines',
 \       'trim_whitespace'
 \   ],
@@ -91,7 +104,7 @@ let g:ale_fixers = {
 \       'trim_whitespace'
 \   ],
 \   'yaml': [
-\       'yamlfix',
+\       'yamlfmt',
 \       'remove_trailing_lines',
 \       'trim_whitespace'
 \   ],
@@ -101,6 +114,7 @@ let g:ale_fixers = {
 \   'go': ['golines', 'gofumpt', 'goimports', 'gopls'],
 \   'rust': ['trim_whitespace', 'remove_trailing_lines', 'rustfmt'],
 \   'cs': [
+\       'dotnet-format',
 \       'remove_trailing_lines',
 \       'trim_whitespace'
 \   ],

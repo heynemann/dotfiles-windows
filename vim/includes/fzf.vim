@@ -84,7 +84,7 @@ function! g:FzfFilePreview()
   function! s:files()
     call s:cacheGitStatus()
     let l:cmd = 'cd ' . s:rootDir . ' && fd --type f'
-    let l:files = split(system(l:cmd, '\n'))
+    let l:files = split(system(l:cmd), '\n')
     return s:prepend_indicators(l:files)
   endfunction
 
@@ -97,10 +97,9 @@ function! g:FzfFilePreview()
     for l:candidate in a:candidates
       let l:status = ''
       let l:icon = split(l:candidate, ' ')[0]
-      let l:filePathWithIcon = split(l:candidate, ' ')[1]
+      let l:filePathWithIcon = join(split(l:candidate, ' ')[1:], ' ')
 
-      let l:pos = strridx(l:filePathWithIcon, ' ')
-      let l:file_path = l:filePathWithIcon[pos+1:-1]
+      let l:file_path = l:filePathWithIcon
       if has_key(s:files_status, l:file_path)
         let l:status = s:files_status[l:file_path]
         call add(l:result, printf('%s %s %s', l:status, l:icon, l:file_path))
@@ -136,11 +135,10 @@ function! g:FzfFilePreview()
                  \ 'ctrl-v': 'vertical split',
                  \ 'ctrl-t': 'tabe'}, a:lines[0], 'e')
 
-    for l:item in a:lines[1:]
-      let l:pos = strridx(l:item, ' ')
-      let l:file_path = l:item[pos+1:-1]
-      call NewTabFzfSink(l:file_path)
-    endfor
+    let l:filepath = join(a:lines[1:], ' ')
+
+    let l:filepath = join(split(substitute(l:filepath, '\s\+', ' ', 'g'))[2:], ' ')
+    call NewTabFzfSink(s:rootDir . "/" . l:filepath)
   endfunction
 
   let l:options = substitute(l:fzf_files_options, '@@ROOTDIR', s:rootDir, 'g')

@@ -74,3 +74,32 @@ endfunction
 
 map <silent><F10> :call <sid>KillGoPls()<cr>
 map <silent>- :NvimTreeFindFileToggle<cr>
+
+function! s:ToggleFix()
+    let g:ale_fix_on_save = !g:ale_fix_on_save
+    if g:ale_fix_on_save
+        echo "ALE: Fix on save enabled"
+    else
+        echo "ALE: Fix on save disabled"
+    endif
+endfunction
+
+function! s:ToggleFocus()
+    if !exists("b:ale_focus")
+        let b:ale_focus = 0
+    endif
+
+    let b:ale_focus = !b:ale_focus
+
+    if b:ale_focus
+        echo "Focus tests are now enabled."
+        silent exec "% s@func\\(.*\\)Test\\(.*\\)[(]@func\\1Test\\2__FOCUS(@"
+        silent exec "% s/\\(__FOCUS\\)\\{1,100\\}/__FOCUS/"
+    else
+        echo "Focus tests are now disabled."
+        silent exec "% s/\\(__FOCUS\\)\\{1,100\\}//"
+    endif
+endfunction
+
+map <silent><F8> :call <sid>ToggleFix()<cr>
+map <silent><F9> :call <sid>ToggleFocus()<cr>

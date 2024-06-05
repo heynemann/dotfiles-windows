@@ -124,8 +124,8 @@ alias glll='git log --stat -p'      # git log with file info + content
 alias glc='_git_commit_diff'        # show commits diff against (upstream|origin)/master (from cb-zsh)
 
 # Git Diff
-alias gd='git diff $(git merge-base master HEAD)'
-alias merge-base='git merge-base master HEAD'
+alias gd='git diff $(git merge-base main HEAD)'
+alias merge-base='git merge-base main HEAD'
 
 # Upstream
 alias gup='gmc'
@@ -227,6 +227,7 @@ alias squash='git rebase -i $(git merge-base master HEAD)'
 
 # Delete branch
 alias gbrd='git-branch-fzf | xargs git branch -D'
+alias gbd='gbrd'
 alias gdel='gbrd'
 alias grm='gbrd'
 
@@ -431,3 +432,11 @@ alias vim='nvim'
 alias open='wslview'
 
 alias nsx-ghtoken='export GITHUB_TOKEN=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'
+
+alias aws='aws --profile AdministratorAccess-492684252576'
+alias pip='pip3'
+alias fix='nvim -p +/HEAD `git diff --name-only | uniq`'
+alias kill-ts="ps aux | grep tsserver | grep -v grep | awk ' { print \$2 } ' | xargs kill -9"
+
+alias prc="gh pr create"
+alias prv="gh pr view --web"

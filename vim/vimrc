@@ -33,19 +33,20 @@ source ~/.vim/includes/mappings.vim
 source ~/.vim/includes/ale.vim
 source ~/.vim/includes/tmux.vim
 source ~/.vim/includes/projectionist.vim
-"source ~/.vim/includes/lightline.vim
-"source ~/.vim/includes/easy-motion.vim
 
 source ~/.vim/includes/go.vim
 
-"if has('nvim')
+if has('nvim')
+  source ~/.vim/includes/tree.lua
   "source ~/.vim/includes/copilot.lua
-"endif
-"
+endif
 
 :au FocusGained * :redraw!
 
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" : "\<TAB>"
+
 colorscheme molokai
 if filereadable("$HOME/.extras.vim") == 1
-    source ~/.extras.vim
+    "source ~/.extras.vim
 endif

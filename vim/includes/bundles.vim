@@ -32,10 +32,19 @@ Plug 'sheerun/vim-polyglot'
 Plug 'elzr/vim-json'
 
 " Golang
-"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+" Dotnet
+Plug 'OmniSharp/omnisharp-vim'
 
 " Rust
 Plug 'rust-lang/rust.vim'
 
+"PlantUML
+Plug 'aklt/plantuml-syntax'
+Plug 'weirongxu/plantuml-previewer.vim'
+Plug 'tyru/open-browser.vim'
+
 " Copilot
-Plug 'zbirenbaum/copilot.lua'
+" Plug 'zbirenbaum/copilot.lua'
+Plug 'github/copilot.vim'
