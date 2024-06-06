@@ -14,7 +14,7 @@ vim.opt.autoindent = true
 vim.opt.colorcolumn = "120"
 vim.opt.textwidth = 120
 vim.opt.mouse = "a"
-vim.opt.clipboard = "unnamed"
+vim.opt.clipboard = "unnamedplus"
 vim.opt.scrollbind = false
 vim.opt.wildmenu = true
 
