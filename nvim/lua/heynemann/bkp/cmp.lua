@@ -1,6 +1,7 @@
 return {
     "hrsh7th/nvim-cmp",
     dependencies = {
+		"zbirenbaum/copilot-cmp",
         "hrsh7th/cmp-nvim-lsp", -- cmp_nvim_lsp
         "neovim/nvim-lspconfig", -- lspconfig
         "onsails/lspkind-nvim", -- lspkind (VS pictograms)
@@ -61,7 +62,7 @@ return {
                 end, {"i", "s"})
             }),
             sources = cmp.config.sources({
-                {name = "nvim_lsp"}, {name = "luasnip"}, {name = "buffer"}
+				{name = "copilot"}, {name = "nvim_lsp"}, {name = "luasnip"}, {name = "buffer"}
             }),
             formatting = {
                 format = lspkind.cmp_format({
@@ -87,5 +88,7 @@ return {
 
         -- Typescript: npm install -g typescript typescript-language-server
         lspconfig["tsserver"].setup {}
+
+		require("copilot_cmp").setup()
     end
 }
