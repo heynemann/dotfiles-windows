@@ -216,7 +216,7 @@ alias sw='switch'
 
 # Git checkout branch
 # alias gc='git-branch-fzf | xargs git checkout'
-alias gcc='git checkout master'
+# alias gcc='git checkout master'
 alias gcr='git-recent-branch-fzf | xargs git checkout'
 
 # Git rebase
