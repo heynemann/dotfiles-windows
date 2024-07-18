@@ -36,6 +36,9 @@ return {
         local lspkind = require("lspkind")
 
         cmp.setup({
+            completion = {
+              autocomplete = false
+            },
             snippet = {
                 expand = function(args)
                     luasnip.lsp_expand(args.body)
@@ -75,8 +78,8 @@ return {
                 { name = "copilot", group_index = 2 },
                 { name = "nvim_lsp", group_index = 2 },
                 { name = "luasnip", group_index = 2 },
-                { name = "buffer", group_index = 2 },
-                { name = "path", group_index = 2 }
+                -- { name = "buffer", group_index = 2 },
+                -- { name = "path", group_index = 2 }
             }),
             formatting = {
                 format = lspkind.cmp_format({
@@ -104,5 +107,36 @@ return {
         lspconfig["tsserver"].setup {}
 
 		require("copilot_cmp").setup()
+
+        local completionDelay = 750
+        local timer = nil
+        local cmp = require("cmp")
+        
+        function _G.setAutoCompleteDelay(delay)
+          completionDelay = delay
+        end
+        
+        function _G.getAutoCompleteDelay()
+          return completionDelay
+        end
+
+        vim.api.nvim_create_autocmd({ "TextChangedI", "CmdlineChanged" }, {
+          pattern = "*",
+          callback = function()
+            if timer then
+              vim.loop.timer_stop(timer)
+              timer = nil
+            end
+        
+            timer = vim.loop.new_timer()
+            timer:start(
+              _G.getAutoCompleteDelay(),
+              0,
+              vim.schedule_wrap(function()
+                cmp.complete({ reason = cmp.ContextReason.Auto })
+              end)
+            )
+          end,
+        })
     end
 }

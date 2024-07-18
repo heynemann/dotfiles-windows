@@ -1,3 +1,20 @@
+function vim.custom_find_files()
+  local function is_git_repo()
+    vim.fn.system("git rev-parse --is-inside-work-tree")
+    return vim.v.shell_error == 0
+  end
+  local function get_git_root()
+    local dot_git_path = vim.fn.finddir(".git", ".;")
+    return vim.fn.fnamemodify(dot_git_path, ":h")
+  end
+  local opts = {}
+  if is_git_repo() then
+    require("telescope.builtin").git_files({ show_untracked = true })
+  else
+    require("telescope.builtin").find_files()
+  end
+end
+
 return {
     "nvim-telescope/telescope.nvim",
     dependencies = {
@@ -27,6 +44,9 @@ return {
                 sorting_strategy = "ascending",
                 layout_strategy = "horizontal",
                 layout_config = {prompt_position = "top"},
+                git_files_arguments = {
+                    show_untracked = true
+                },
                 mappings = {
                     i = {
                         ["<C-k>"] = actions.move_selection_previous, -- move to prev result
@@ -64,7 +84,7 @@ return {
 
         map("n", "-", ":Telescope file_browser<CR>")
 
-        map("n", "<leader>t", builtin.find_files, opts) -- Lists files in your current working directory, respects .gitignore
+        map("n", "<leader>t", vim.custom_find_files, opts)
         map("n", "<leader>ss", builtin.treesitter, opts) -- Lists tree-sitter symbols
         map("n", "<leader>sc", builtin.spell_suggest, opts) -- Lists spell options
         map("n", "<leader>a", livegrep.live_grep_args, opts) -- Live Grep

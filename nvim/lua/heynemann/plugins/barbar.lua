@@ -9,6 +9,7 @@ return {
         local barbar = require("barbar")
 
         barbar.setup({
+            animate = false,
             clickable = true, -- Enables/disables clickable tabs
             tabpages = false, -- Enable/disables current/total tabpages indicator (top right corner)
             insert_at_end = true,
@@ -52,8 +53,8 @@ return {
         -- Pin/unpin buffer
         map("n", "<A-p>", "<Cmd>BufferPin<CR>", opts)
         -- Close buffer
-        map("n", "<A-c>", "<Cmd>BufferClose<CR>", opts)
-        map("n", "<A-b>", "<Cmd>BufferCloseAllButCurrent<CR>", opts)
+        -- map("n", "<A-c>", "<Cmd>BufferClose<CR>", opts)
+        -- map("n", "<A-b>", "<Cmd>BufferCloseAllButCurrent<CR>", opts)
         map("n", "<leader>b", "<Cmd>:bufdo bd<CR>", opts)
     end
 }

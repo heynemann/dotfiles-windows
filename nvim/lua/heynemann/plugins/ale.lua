@@ -7,6 +7,20 @@ return {
       vim.api.nvim_set_keymap('n', 'Q', '<Plug>(ale_previous_wrap)', { noremap = true, silent = true })
       vim.api.nvim_set_keymap('n', 'q', '<Plug>(ale_next_wrap)', { noremap = true, silent = true })
 
+    -- Define the ToggleFix function
+    local function ToggleFix()
+        vim.g.ale_fix_on_save = not vim.g.ale_fix_on_save
+        if vim.g.ale_fix_on_save then
+            print("ALE: Fix on save enabled")
+        else
+            print("ALE: Fix on save disabled")
+        end
+    end
+  
+    -- Create a mapping to toggle ALE fix on save
+    local opts = {noremap = true, silent = false}
+    vim.keymap.set('n', '<F3>', ToggleFix, opts)
+
       vim.g.ale_linters = {
         c = {'betty-style', 'betty-doc', 'gcc'},
         csh = {'shell'},
@@ -38,6 +52,7 @@ return {
       }
 
     vim.g.ale_fix_on_save = 1
+
     vim.g.ale_fixers = {
         python = {
             'black',
@@ -90,6 +105,7 @@ return {
         },
         yaml = {
             'yamlfmt',
+            'yamlfix',
             'remove_trailing_lines',
             'trim_whitespace'
         },

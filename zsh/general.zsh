@@ -92,7 +92,7 @@ f () {
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
 TIPZ_TEXT='💡 '
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 # If NumLock is off, translate keys to make them appear the same as with NumLock on.
@@ -129,3 +129,5 @@ bindkey "^[[F" end-of-line
 bindkey "^[[3~" delete-char
 
 ulimit -n 256000
+
+export GPG_TTY=$(tty)

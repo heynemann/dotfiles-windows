@@ -2,6 +2,8 @@ vim.g.mapleader = ","
 
 vim.opt.encoding = "utf-8"
 
+vim.opt.visualbell = false
+vim.opt.errorbells = false
 vim.opt.expandtab = true
 vim.opt.compatible = false
 vim.opt.hlsearch = true
@@ -36,7 +38,7 @@ vim.opt.gdefault = true
 vim.opt.incsearch = true
 
 -- The "highlight search option" ('hlsearch') turns on search highlighting. This option is enabled by the command:
-vim.opt.hlsearch = true
+-- vim.opt.hlsearch = true
 
 -- The showmatch option is also useful: it can reduce the need for %, the cursor will briefly
 -- jump to the matching brace when you insert one.
@@ -65,13 +67,26 @@ vim.api.nvim_create_autocmd("FileType", {
     end
 })
 
--- vim.api.nvim_create_autocmd("FileType", {
-    -- pattern = {"markdown"},
-    -- callback = function(ev)
-        -- vim.api.nvim_set_option_value("textwidth", 0, {scope = "local"})
-        -- vim.api.nvim_set_option_value("wrapmargin", 0, {scope = "local"})
-        -- vim.api.nvim_set_option_value("linebreak", 0, {scope = "local"})
-    -- end
--- })
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = {"markdown"},
+    callback = function(ev)
+        vim.keymap.set("n", "<F1>", ":MarkdownPreview<CR>", { noremap = true, silent = true })
+    end
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = {"plantuml"},
+    callback = function(ev)
+        vim.keymap.set("n", "<F1>", ":PlantumlToggle<CR>", { noremap = true, silent = true })
+    end
+})
 
 vim.keymap.set("n", "<C-q>", ":cclose<CR>", { noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>m", function()
+    vim.cmd(":%s/\r//ge")
+end, { noremap = true, silent = true })
+
+vim.cmd([[
+  set t_BE=
+]])

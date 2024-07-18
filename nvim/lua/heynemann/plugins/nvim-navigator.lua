@@ -9,7 +9,7 @@ return {
                 require'nvim-treesitter.configs'.setup {
                     refactor = {
                         highlight_definitions = {
-                          enable = true,
+                          enable = false,
                           -- Set to false if you have an `updatetime` of ~100.
                           clear_on_cursor_move = true,
                         },
@@ -39,7 +39,7 @@ return {
     config = function()
         require("go").setup()
         require("navigator").setup({
-            lsp_signature_help = true, -- enable ray-x/lsp_signature
+            lsp_signature_help = false, -- enable ray-x/lsp_signature
             -- lsp = {format_on_save = true},
             default_mapping = true,
         })
