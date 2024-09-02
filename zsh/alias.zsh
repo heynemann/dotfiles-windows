@@ -261,7 +261,12 @@ docker-ps-fzf () {
   docker ps | fzf +m --layout=reverse --header-lines=1 --preview-window=right,50%,cycle --preview="docker inspect {1} | bat --color always -l json --plain" | awk '{print $1}'
 }
 
+docker-ps-a-fzf () {
+  docker ps -a | fzf +m --layout=reverse --header-lines=1 --preview-window=right,50%,cycle --preview="docker inspect {1} | bat --color always -l json --plain" | awk '{print $1}'
+}
+
 alias ds='docker-ps-fzf | xargs docker stop'
+alias dl='docker-ps-a-fzf | xargs docker logs'
 alias de="docker-ps-fzf | xargs echo -n | awk '{ print \$1 \" /bin/bash\"}' | xargs -o docker exec -it"
 alias docker-rm='docker rm --force $(docker ps --all -q) && docker rmi --force $(docker images --all -q)'
 alias docker-nuke='docker system prune --all --force --volumes'

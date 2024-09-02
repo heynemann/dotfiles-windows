@@ -82,6 +82,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.keymap.set("n", "<C-q>", ":cclose<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader><space>", ":noh<CR>", { noremap = true, silent = false })
 
 vim.keymap.set("n", "<leader>m", function()
     vim.cmd(":%s/\r//ge")
