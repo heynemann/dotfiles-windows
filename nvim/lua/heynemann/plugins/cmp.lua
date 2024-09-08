@@ -69,7 +69,7 @@ return {
         lspconfig["csharp_ls"].setup {}
 
         -- Typescript: npm install -g typescript typescript-language-server
-        lspconfig["tsserver"].setup {}
+        -- lspconfig["tsserver"].setup {}
 
 		require("copilot_cmp").setup()
 
