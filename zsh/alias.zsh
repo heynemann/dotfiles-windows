@@ -445,3 +445,7 @@ alias kill-ts="ps aux | grep tsserver | grep -v grep | awk ' { print \$2 } ' | x
 
 alias prc="gh pr create"
 alias prv="gh pr view --web"
+
+alias gt="go test -count=1"
+alias gtv="env SILENT_CFG=true go test -v -count=1"
+alias python="python3"
