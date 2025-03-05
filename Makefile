@@ -74,3 +74,7 @@ tmux-plugin-manager:
 	  cd ${TPM_DIR}; git pull; cd -; \
 		echo "TPM already exists."; \
 	fi
+
+backup-cursor:
+	@cp /mnt/c/Users/heyne/AppData/Roaming/Cursor/User/settings.json cursor/
+	@cp /mnt/c/Users/heyne/AppData/Roaming/Cursor/User/keybindings.json cursor/

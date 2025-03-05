@@ -1,0 +1,251 @@
+{
+    "window.zoomLevel": 3,
+    "editor.formatOnSave": true,
+    "editor.fontSize": 18,
+    "vim.leader": ",",
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "<leader>",
+                "t"
+            ],
+            "commands": [
+                "workbench.action.quickOpen"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "a"
+            ],
+            "commands": [
+                "workbench.action.findInFiles"
+            ]
+        },
+        {
+            "before": [
+                "-",
+            ],
+            "commands": [
+                "workbench.view.explorer"
+            ]
+        },
+        {
+            "before": [
+                "q"
+            ],
+            "commands": [
+                "editor.action.marker.next"
+            ],
+        },
+        {
+            "before": [
+                "Q",
+            ],
+            "commands": [
+                "editor.action.marker.nextInFiles"
+            ],
+        },
+        {
+            "before": [
+                "g",
+                "k"
+            ],
+            "commands": [
+                "editor.action.showHover"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "l"
+            ],
+            "commands": [
+                {
+                    "command": "workbench.action.gotoSymbol"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "r",
+                "t"
+            ],
+            "commands": [
+                "testing.runCurrentFile"
+            ],
+        },
+        {
+            "before": [
+                "<leader>",
+                "d",
+                "t"
+            ],
+            "commands": [
+                "testing.debugCurrentFile"
+            ],
+        },
+        {
+            "before": [
+                "<leader>",
+                "f",
+            ],
+            "commands": [
+                "workbench.action.findInFiles"
+            ],
+        },
+        {
+            "before": [
+                "<leader>",
+                "r",
+                "c"
+            ],
+            "commands": [
+                "testing.coverageAtCursor"
+            ],
+        },
+        {
+            "before": [
+                "=",
+            ],
+            "commands": [
+                "workbench.action.togglePanel"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "b"
+            ],
+            "commands": [
+                "workbench.action.closeAllEditors"
+            ]
+        },
+        {
+            "before": [
+                ";",
+            ],
+            "commands": [
+                "workbench.action.showCommands"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "c"
+            ],
+            "commands": [
+                {
+                    "command": "editor.action.commentLine"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "d",
+                "b"
+            ],
+            "commands": [
+                "editor.debug.action.toggleBreakpoint"
+            ]
+        },
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [
+                "<leader>",
+                "c"
+            ],
+            "commands": [
+                {
+                    "command": "editor.action.commentLine"
+                }
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "g",
+                "a",
+            ],
+            "commands": [
+                {
+                    "command": "alternate.alternateFile"
+                }
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "s"
+            ],
+            "commands": [
+                {
+                    "command": "alternate.alternateFileInSplit"
+                }
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "r"
+            ],
+            "commands": [
+                {
+                    "command": "references-view.findReferences"
+                }
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "i"
+            ],
+            "commands": [
+                {
+                    "command": "references-view.findImplementations"
+                }
+            ]
+        }
+    ],
+    "vim.useSystemClipboard": true,
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": "\\.go$",
+                "cmd": "golines ${file} -w -m 120"
+            }
+        ]
+    },
+    "window.confirmSaveUntitledWorkspace": false,
+    "redhat.telemetry.enabled": true,
+    "files.associations": {
+        "Makefile.*": "makefile"
+    },
+    "makefile.configureOnOpen": true,
+    "go.lintTool": "golangci-lint",
+    "go.lintFlags": [],
+    "diffEditor.codeLens": true,
+    "javascript.referencesCodeLens.enabled": true,
+    "javascript.referencesCodeLens.showOnAllFunctions": true,
+    "typescript.referencesCodeLens.enabled": true,
+    "typescript.referencesCodeLens.showOnAllFunctions": true,
+    "go.inlayHints.assignVariableTypes": true,
+    "go.inlayHints.compositeLiteralFields": true,
+    "go.inlayHints.compositeLiteralTypes": true,
+    "go.inlayHints.constantValues": true,
+    "go.inlayHints.parameterNames": true,
+    "go.inlayHints.rangeVariableTypes": true,
+    "go.editorContextMenuCommands": {
+        "generateTestForPackage": true,
+        "generateTestForFile": true
+    },
+    "go.formatTool": "goimports",
+    // "go.formatTool": ""
+    //     "-c",
+    //     "/.golangci.yaml",
+    // ]
+}

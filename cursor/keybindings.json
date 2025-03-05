@@ -1,0 +1,95 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "f7",
+        "command": "editor.action.marker.nextInFiles",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+f5",
+        "command": "workbench.action.reloadWindow",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "left",
+        "command": "workbench.action.previousEditor",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "right",
+        "command": "workbench.action.nextEditor",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "f1",
+        "command": "workbench.action.terminal.focus"
+    },
+    {
+        "key": "f1",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "f1",
+        "command": "workbench.action.terminal.toggleTerminal",
+        // "command": "workbench.panel.testResults.view.toggleVisibility",
+        "when": "workbench.panel.testResults.view.visible"
+    },
+    {
+        "key": "-",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "sideBarVisible"
+    },
+    {
+        "key": "ctrl+space",
+        "command": "workbench.action.toggleMaximizedPanel"
+    },
+    {
+        "key": "ctrl+shift+o",
+        "command": "remote-wsl.openFolder"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.duplicateWorkspaceInNewWindow"
+    },
+    {
+        "key": ", t",
+        "command": "workbench.action.quickOpen",
+        "when": "!editorFocus && !terminalFocus && !sideBarFocus",
+    },
+    {
+        "key": ";",
+        "command": "workbench.action.showCommands",
+        "when": "!editorFocus && !terminalFocus && !sideBarFocus",
+    },
+    {
+        "key": "-",
+        "command": "workbench.view.explorer",
+        "when": "!editorFocus && !sideBarVisible",
+    },
+    {
+        "key": "f8",
+        "command": "-editor.action.marker.nextInFiles",
+        "when": "editorFocus"
+    },
+    {
+        "key": "pageup",
+        "command": "workbench.action.terminal.scrollUpPage",
+        "when": "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && !terminalAltBufferActive"
+    },
+    {
+        "key": "shift+pageup",
+        "command": "-workbench.action.terminal.scrollUpPage",
+        "when": "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && !terminalAltBufferActive"
+    },
+    {
+        "key": "pagedown",
+        "command": "workbench.action.terminal.scrollDownPage",
+        "when": "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && !terminalAltBufferActive"
+    },
+    {
+        "key": "shift+pagedown",
+        "command": "-workbench.action.terminal.scrollDownPage",
+        "when": "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && !terminalAltBufferActive"
+    },
+]
