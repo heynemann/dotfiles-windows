@@ -438,7 +438,6 @@ alias open='wslview'
 
 alias nsx-ghtoken='export GITHUB_TOKEN=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'
 
-alias aws='aws --profile AdministratorAccess-492684252576'
 alias pip='pip3'
 alias fix='nvim -p +/HEAD `git diff --name-only | uniq`'
 alias kill-ts="ps aux | grep tsserver | grep -v grep | awk ' { print \$2 } ' | xargs kill -9"
@@ -449,3 +448,5 @@ alias prv="gh pr view --web"
 alias gt="go test -count=1"
 alias gtv="env SILENT_CFG=true go test -v -count=1"
 alias python="python3"
+alias acs="aws configure sso --profile AdministratorAccess-492684252576"
+alias aws="aws --profile AdministratorAccess-492684252576"
