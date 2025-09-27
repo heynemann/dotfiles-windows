@@ -45,13 +45,13 @@ source ~/.zsh/go.zsh
 
 export PATH="/home/heynemann/.bin:$PATH"
 
-#if [ -f "$HOME/.alias.zsh" ]; then
-	# source $HOME/.alias.zsh
-#fi
+if [ -f "$HOME/.alias.zsh" ]; then
+	source $HOME/.alias.zsh
+fi
 
-#if [ -f "$HOME/.local.zsh" ]; then
-	#source $HOME/.local.zsh
-#fi
+if [ -f "$HOME/.local.zsh" ]; then
+	source $HOME/.local.zsh
+fi
 
 unsetopt WARN_CREATE_GLOBAL
 
