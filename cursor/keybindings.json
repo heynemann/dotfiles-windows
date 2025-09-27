@@ -13,12 +13,12 @@
     {
         "key": "left",
         "command": "workbench.action.previousEditor",
-        "when": "!terminalFocus"
+        "when": "!terminalFocus && editorFocus && !renameInputVisible"
     },
     {
         "key": "right",
         "command": "workbench.action.nextEditor",
-        "when": "!terminalFocus"
+        "when": "!terminalFocus && editorFocus && !renameInputVisible"
     },
     {
         "key": "f1",
@@ -38,7 +38,7 @@
     {
         "key": "-",
         "command": "workbench.action.toggleSidebarVisibility",
-        "when": "sideBarVisible"
+        "when": "sideBarVisible && !inChat && !chatInputHasFocus && !chatInputHasText && !editorTextFocus && !inputFocus && !chatInputFocus && !inQuickOpen && !webviewFocus && !renameInputVisible && !inlineChatFocused && !terminalChatFocus && !notebookCellChatFocused && !inlineCompletionVisible && !panelFocus && !accessibilityHelpDialogVisible && !inputBoxFocus"
     },
     {
         "key": "ctrl+space",
@@ -60,12 +60,7 @@
     {
         "key": ";",
         "command": "workbench.action.showCommands",
-        "when": "!editorFocus && !terminalFocus && !sideBarFocus",
-    },
-    {
-        "key": "-",
-        "command": "workbench.view.explorer",
-        "when": "!editorFocus && !sideBarVisible",
+        "when": "!inChat && !chatInputHasFocus && !editorFocus && !terminalFocus && !sideBarFocus",
     },
     {
         "key": "f8",
@@ -106,5 +101,9 @@
         "key": "ctrl+w",
         "command": "workbench.action.closeActiveEditor",
         "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "composerMode.agent"
     }
 ]

@@ -1,256 +1,352 @@
 {
-    "window.zoomLevel": 3,
-    "editor.formatOnSave": true,
-    "editor.fontSize": 18,
-    "vim.leader": ",",
-    "vim.normalModeKeyBindings": [
+  "window.zoomLevel": 1,
+  "editor.fontSize": 18,
+  "vim.leader": ",",
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [
+        "<leader>",
+        "t"
+      ],
+      "commands": [
+        "workbench.action.quickOpen"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "a"
+      ],
+      "commands": [
+        "workbench.action.findInFiles"
+      ]
+    },
+    {
+      "before": [
+        "-"
+      ],
+      "commands": [
+        "workbench.view.explorer"
+      ]
+    },
+    {
+      "before": [
+        "q"
+      ],
+      "commands": [
+        "editor.action.marker.next"
+      ]
+    },
+    {
+      "before": [
+        "Q"
+      ],
+      "commands": [
+        "editor.action.marker.nextInFiles"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "k"
+      ],
+      "commands": [
+        "editor.action.showHover"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "l"
+      ],
+      "commands": [
         {
-            "before": [
-                "<leader>",
-                "t"
-            ],
-            "commands": [
-                "workbench.action.quickOpen"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "a"
-            ],
-            "commands": [
-                "workbench.action.findInFiles"
-            ]
-        },
-        {
-            "before": [
-                "-",
-            ],
-            "commands": [
-                "workbench.view.explorer"
-            ]
-        },
-        {
-            "before": [
-                "q"
-            ],
-            "commands": [
-                "editor.action.marker.next"
-            ],
-        },
-        {
-            "before": [
-                "Q",
-            ],
-            "commands": [
-                "editor.action.marker.nextInFiles"
-            ],
-        },
-        {
-            "before": [
-                "g",
-                "k"
-            ],
-            "commands": [
-                "editor.action.showHover"
-            ]
-        },
-        {
-            "before": [
-                "g",
-                "l"
-            ],
-            "commands": [
-                {
-                    "command": "workbench.action.gotoSymbol"
-                }
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "r",
-                "t"
-            ],
-            "commands": [
-                "testing.runCurrentFile"
-            ],
-        },
-        {
-            "before": [
-                "<leader>",
-                "d",
-                "t"
-            ],
-            "commands": [
-                "testing.debugCurrentFile"
-            ],
-        },
-        {
-            "before": [
-                "<leader>",
-                "f",
-            ],
-            "commands": [
-                "workbench.action.findInFiles"
-            ],
-        },
-        {
-            "before": [
-                "<leader>",
-                "r",
-                "c"
-            ],
-            "commands": [
-                "testing.coverageAtCursor"
-            ],
-        },
-        {
-            "before": [
-                "=",
-            ],
-            "commands": [
-                "workbench.action.togglePanel"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "b"
-            ],
-            "commands": [
-                "workbench.action.closeAllEditors"
-            ]
-        },
-        {
-            "before": [
-                ";",
-            ],
-            "commands": [
-                "workbench.action.showCommands"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "c"
-            ],
-            "commands": [
-                {
-                    "command": "editor.action.commentLine"
-                }
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "d",
-                "b"
-            ],
-            "commands": [
-                "editor.debug.action.toggleBreakpoint"
-            ]
-        },
-    ],
-    "vim.visualModeKeyBindings": [
-        {
-            "before": [
-                "<leader>",
-                "c"
-            ],
-            "commands": [
-                {
-                    "command": "editor.action.commentLine"
-                }
-            ]
+          "command": "workbench.action.gotoSymbol"
         }
-    ],
-    "vim.normalModeKeyBindingsNonRecursive": [
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "r",
+        "t"
+      ],
+      "commands": [
+        "testing.runCurrentFile"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "d",
+        "t"
+      ],
+      "commands": [
+        "testing.debugCurrentFile"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "f"
+      ],
+      "commands": [
+        "workbench.action.findInFiles"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "r",
+        "c"
+      ],
+      "commands": [
+        "testing.coverageAtCursor"
+      ]
+    },
+    {
+      "before": [
+        "="
+      ],
+      "commands": [
+        "workbench.action.togglePanel"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "b"
+      ],
+      "commands": [
+        "workbench.action.closeAllEditors"
+      ]
+    },
+    {
+      "before": [
+        ";"
+      ],
+      "commands": [
+        "workbench.action.showCommands"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "c"
+      ],
+      "commands": [
         {
-            "before": [
-                "g",
-                "a",
-            ],
-            "commands": [
-                {
-                    "command": "alternate.alternateFile"
-                }
-            ]
-        },
-        {
-            "before": [
-                "g",
-                "s"
-            ],
-            "commands": [
-                {
-                    "command": "alternate.alternateFileInSplit"
-                }
-            ]
-        },
-        {
-            "before": [
-                "g",
-                "r"
-            ],
-            "commands": [
-                {
-                    "command": "references-view.findReferences"
-                }
-            ]
-        },
-        {
-            "before": [
-                "g",
-                "i"
-            ],
-            "commands": [
-                {
-                    "command": "references-view.findImplementations"
-                }
-            ]
+          "command": "editor.action.commentLine"
         }
-    ],
-    "vim.useSystemClipboard": true,
-    "emeraldwalk.runonsave": {
-        "commands": [
-            {
-                "match": "\\.go$",
-                "cmd": "golines ${file} -w -m 120"
-            }
-        ]
+      ]
     },
-    "window.confirmSaveUntitledWorkspace": false,
-    "redhat.telemetry.enabled": true,
-    "files.associations": {
-        "Makefile.*": "makefile"
+    {
+      "before": [
+        "<leader>",
+        "d",
+        "b"
+      ],
+      "commands": [
+        "editor.debug.action.toggleBreakpoint"
+      ]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": [
+        "<leader>",
+        "c"
+      ],
+      "commands": [
+        {
+          "command": "editor.action.commentLine"
+        }
+      ]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "g",
+        "a"
+      ],
+      "commands": [
+        {
+          "command": "alternate.alternateFile"
+        }
+      ]
     },
-    "makefile.configureOnOpen": true,
-    "go.lintTool": "golangci-lint",
-    "go.lintFlags": [],
-    "diffEditor.codeLens": true,
-    "javascript.referencesCodeLens.enabled": true,
-    "javascript.referencesCodeLens.showOnAllFunctions": true,
-    "typescript.referencesCodeLens.enabled": true,
-    "typescript.referencesCodeLens.showOnAllFunctions": true,
-    "go.inlayHints.assignVariableTypes": true,
-    "go.inlayHints.compositeLiteralFields": true,
-    "go.inlayHints.compositeLiteralTypes": true,
-    "go.inlayHints.constantValues": true,
-    "go.inlayHints.parameterNames": true,
-    "go.inlayHints.rangeVariableTypes": true,
-    "go.editorContextMenuCommands": {
-        "generateTestForPackage": true,
-        "generateTestForFile": true
+    {
+      "before": [
+        "g",
+        "s"
+      ],
+      "commands": [
+        {
+          "command": "alternate.alternateFileInSplit"
+        }
+      ]
     },
-    "go.formatTool": "goimports",
-    // "go.formatTool": ""
-    //     "-c",
-    //     "/.golangci.yaml",
-    // ]
-    "protoc": {
-        "options": [
-            "--proto_path=${workspaceRoot}/protos"
-        ]
+    {
+      "before": [
+        "g",
+        "r"
+      ],
+      "commands": [
+        {
+          "command": "references-view.findReferences"
+        }
+      ]
     },
+    {
+      "before": [
+        "g",
+        "i"
+      ],
+      "commands": [
+        {
+          "command": "references-view.findImplementations"
+        }
+      ]
+    }
+  ],
+  "vim.useSystemClipboard": true,
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": "\\.go$",
+        "cmd": "gofumpt -w ${file}"
+      },
+      {
+        "match": "\\.go$",
+        "cmd": "golines ${file} -w -m 100"
+      },
+      {
+        "match": "\\.go$",
+        "cmd": "echo '${fileBasename}' saved."
+      }
+    ]
+  },
+  "window.confirmSaveUntitledWorkspace": false,
+  "redhat.telemetry.enabled": true,
+  "files.associations": {
+    "Makefile.*": "makefile",
+    "*.md": "markdown"
+  },
+  "makefile.configureOnOpen": true,
+  "diffEditor.codeLens": true,
+  "javascript.referencesCodeLens.enabled": true,
+  "javascript.referencesCodeLens.showOnAllFunctions": true,
+  "typescript.referencesCodeLens.enabled": true,
+  "typescript.referencesCodeLens.showOnAllFunctions": true,
+  "go.inlayHints.assignVariableTypes": true,
+  "go.inlayHints.compositeLiteralFields": true,
+  "go.inlayHints.compositeLiteralTypes": true,
+  "go.inlayHints.constantValues": true,
+  "go.inlayHints.parameterNames": true,
+  "go.inlayHints.rangeVariableTypes": true,
+  "go.editorContextMenuCommands": {
+    "generateTestForPackage": true,
+    "generateTestForFile": true
+  },
+  "go.lintTool": "golangci-lint-v2",
+  "go.lintFlags": [
+    "--path-mode=abs",
+    "--fast-only"
+  ],
+  "go.formatTool": "custom",
+  "go.alternateTools": {
+    "customFormatter": "golangci-lint"
+  },
+  "go.formatFlags": [
+    "fmt",
+    "--stdin"
+  ],
+  "protoc": {
+    "options": [
+      "--proto_path=${workspaceRoot}/protos"
+    ]
+  },
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.persistentSessionScrollback": 10000,
+  "terminal.integrated.scrollback": 100000,
+  "go.coverOnSingleTest": true,
+  "editor.formatOnSave": true,
+  "vsicons.presets.yamlOfficial": true,
+  "files.exclude": {
+    "**/.trunk/*actions/": true,
+    "**/.trunk/*logs/": true,
+    "**/.trunk/*notifications/": true,
+    "**/.trunk/*out/": true,
+    "**/.trunk/*plugins/": true
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "go.lintOnSave": "file",
+  "files.watcherExclude": {
+    "**/.trunk/*actions/": true,
+    "**/.trunk/*logs/": true,
+    "**/.trunk/*notifications/": true,
+    "**/.trunk/*out/": true,
+    "**/.trunk/*plugins/": true
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
+  "cursor.cpp.disabledLanguages": [
+    "plaintext"
+  ],
+  "[proto3]": {
+    "editor.defaultFormatter": "bufbuild.vscode-buf"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "explorer.confirmDragAndDrop": false,
+  "git.autofetch": true,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "remote.autoForwardPortsSource": "hybrid",
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock",
+    "*.sqlite": "${capture}.${extname}-*",
+    "*.db": "${capture}.${extname}-*",
+    "*.sqlite3": "${capture}.${extname}-*",
+    "*.db3": "${capture}.${extname}-*",
+    "*.sdb": "${capture}.${extname}-*",
+    "*.s3db": "${capture}.${extname}-*"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cursor.composer.shouldAllowCustomModes": true,
+  "cursor.composer.shouldChimeAfterChatFinishes": true,
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  }
 }
