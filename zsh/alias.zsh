@@ -10,7 +10,7 @@ alias sz="reload"
 alias ea="$EDITOR ~/.alias.zsh;reload"
 alias el="$EDITOR ~/.local.zsh;reload"
 alias ez="$EDITOR ~/.zshrc;reload"       # alias for Edit Zshrc
-alias st="~/.bin/dev-tmux"
+alias st="~/.bin/vscode-tmux"
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
@@ -231,7 +231,7 @@ alias gbd='gbrd'
 alias gdel='gbrd'
 alias grm='gbrd'
 
-alias st='dev-tmux'
+# alias st='dev-tmux'
 alias sq='square-tmux'
 alias hex='hex-tmux'
 
@@ -450,3 +450,35 @@ alias gtv="env SILENT_CFG=true go test -v -count=1"
 alias python="python3"
 alias acs="aws configure sso --profile AdministratorAccess-492684252576"
 alias aws="aws --profile AdministratorAccess-492684252576"
+alias update-cursor-rules='curl -sSL -H "Authorization: token $GHA_PAT" https://raw.githubusercontent.com/NSXBet/cursor-rules/main/download_cursor_rules.sh | bash'
+alias q="true"
+
+alias last-tags="git tag --sort=-creatordate | head -10"
+alias cfa="claude-flow"
+
+function hmsp() {
+  local input="$1"
+  shift
+  for arg in "$@"; do
+    input="$input $arg"
+  done
+  claude-flow hive-mind spawn "$input" --claude --auto-spawn --max-workers 16 --auto-scale
+}
+
+alias cfa-init="npx claude-flow@alpha hive-mind init --queen-type strategic --max-workers 16 --consensus weighted --memory-size 1024 --auto-scale --auto-spawn"
+
+function cfa-spawn() {
+  local input="$1"
+  shift
+  for arg in "$@"; do
+    input="$input $arg"
+  done
+  npx claude-flow@alpha hive-mind spawn "$input" --claude --auto-spawn --max-workers 16 --auto-scale
+}
+
+alias pip='pip3'
+#alias claude="~/.claude/local/claude"
+export PATH="~/.claude/local:~/.claude/local/node_modules/.bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+alias gonuke="go clean -i -r -cache -modcache -testcache -fuzzcache"

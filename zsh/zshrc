@@ -18,21 +18,46 @@ fi
 
 export PATH="/home/heynemann/.local/bin:$PATH"
 
+unsetopt WARN_CREATE_GLOBAL
+
+source ~/.fzf.zsh
+
+unsetopt WARN_CREATE_GLOBAL
+
 source ~/.zsh/general.zsh
-source ~/.zsh/alias.zsh
+# source ~/.zsh/alias.zsh
+#
+unsetopt WARN_CREATE_GLOBAL
+
 source ~/.zsh/bundles.zsh
+
+unsetopt WARN_CREATE_GLOBAL
+
 source ~/.zsh/starship.zsh
+
+unsetopt WARN_CREATE_GLOBAL
+
+# source ~/.zsh/python.zsh
 # source ~/.zsh/rust.zsh
 source ~/.zsh/go.zsh
-source ~/.zsh/node.zsh
-source ~/.zsh/cursor.zsh
-
-if [ -f "$HOME/.alias.zsh" ]; then
-	source $HOME/.alias.zsh
-fi
-
-if [ -f "$HOME/.local.zsh" ]; then
-	source $HOME/.local.zsh
-fi
+# source ~/.zsh/node.zsh
+# source ~/.zsh/cursor.zsh
 
 export PATH="/home/heynemann/.bin:$PATH"
+
+#if [ -f "$HOME/.alias.zsh" ]; then
+	# source $HOME/.alias.zsh
+#fi
+
+#if [ -f "$HOME/.local.zsh" ]; then
+	#source $HOME/.local.zsh
+#fi
+
+unsetopt WARN_CREATE_GLOBAL
+
+eval "$(fnm env --use-on-cd --shell zsh)"
+fnm use v24.9.0
+export PATH="/home/heynemann/.local/share/fnm/node-versions/v24.9.0/installation/bin:$PATH"
+
+setopt LOCAL_OPTIONS
+unsetopt WARN_CREATE_GLOBAL
