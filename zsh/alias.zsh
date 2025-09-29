@@ -10,9 +10,9 @@ alias sz="reload"
 alias ea="$EDITOR ~/.alias.zsh;reload"
 alias el="$EDITOR ~/.local.zsh;reload"
 alias ez="$EDITOR ~/.zshrc;reload"       # alias for Edit Zshrc
-alias st="~/.bin/vscode-tmux"
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
+alias st="~/.bin/dev-tmux"
 
 # git
 alias g='git'
@@ -482,3 +482,4 @@ export PATH="~/.claude/local:~/.claude/local/node_modules/.bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 alias gonuke="go clean -i -r -cache -modcache -testcache -fuzzcache"
+alias pip="pip3"
