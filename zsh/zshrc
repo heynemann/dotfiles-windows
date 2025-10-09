@@ -53,5 +53,6 @@ unsetopt WARN_CREATE_GLOBAL
 
 # Ensure local bin comes first
 export PATH="$(pipx environment --value PIPX_BIN_DIR):$PATH"
-export PATH="/home/heynemann/.bin:$PATH"
-export PATH="/home/heynemann/.local/bin:$PATH"
+export PATH="~/.bin:$PATH"
+export PATH="~/.local/bin:$PATH"
+export PATH="~/.local/state/fnm_multishells/39814_1759981795493/bin:$PATH"
