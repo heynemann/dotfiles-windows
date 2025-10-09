@@ -483,3 +483,4 @@ export PATH="$HOME/.local/bin:$PATH"
 
 alias gonuke="go clean -i -r -cache -modcache -testcache -fuzzcache"
 alias pip="pip3"
+alias docker="podman"
