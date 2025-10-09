@@ -78,3 +78,7 @@ tmux-plugin-manager:
 backup-cursor:
 	@cp /mnt/c/Users/heyne/AppData/Roaming/Cursor/User/settings.json cursor/
 	@cp /mnt/c/Users/heyne/AppData/Roaming/Cursor/User/keybindings.json cursor/
+
+mac-cursor-symlinks:
+	@ln -s ~/Library/Application\ Support/Cursor/User/settings.json ~/src/dotfiles-windows/cursor/settings.json
+	@ln -s ~/Library/Application\ Support/Cursor/User/keybindings.json ~/src/dotfiles-windows/cursor/keybindings.json
