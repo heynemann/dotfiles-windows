@@ -17,9 +17,7 @@ git-setup:
 zsh-setup: zsh-brew zsh-set-default zsh-symlinks
 
 zsh-brew:
-	@brew install zsh
-	@brew install sheldon
-	@brew install starship
+	@brew install zsh sheldon starship gpg fnm pipx
 
 zsh-set-default:
 	@echo "Looking for ZSH in ${ZSHPATH}..."
