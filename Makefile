@@ -82,3 +82,7 @@ mac-cursor-symlinks:
 	@ln -sf ~/src/dotfiles-windows/cursor/settings.json ~/Library/Application\ Support/Cursor/User/settings.json
 	@rm -f ~/Library/Application\ Support/Cursor/User/keybindings.json
 	@ln -sf ~/src/dotfiles-windows/cursor/keybindings.json ~/Library/Application\ Support/Cursor/User/keybindings.json
+
+update-cursor:
+	@cp cursor/settings.json /mnt/c/Users/heyne/AppData/Roaming/Cursor/User/settings.json
+	@cp cursor/keybindings.json /mnt/c/Users/heyne/AppData/Roaming/Cursor/User/keybindings.json

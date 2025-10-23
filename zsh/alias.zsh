@@ -10,6 +10,8 @@ alias sz="reload"
 alias ea="$EDITOR ~/.alias.zsh;reload"
 alias el="$EDITOR ~/.local.zsh;reload"
 alias ez="$EDITOR ~/.zshrc;reload"       # alias for Edit Zshrc
+
+# alias st="~/.bin/vscode-tmux"
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias st="~/.bin/dev-tmux"
@@ -231,7 +233,7 @@ alias gbd='gbrd'
 alias gdel='gbrd'
 alias grm='gbrd'
 
-# alias st='dev-tmux'
+alias st='dev-tmux'
 alias sq='square-tmux'
 alias hex='hex-tmux'
 
@@ -482,5 +484,7 @@ export PATH="~/.claude/local:~/.claude/local/node_modules/.bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 alias gonuke="go clean -i -r -cache -modcache -testcache -fuzzcache"
+
 alias pip="pip3"
-alias docker="podman"
+alias gts="gotestsum --format github-actions -- --count=1 ./... -v"
+alias w2="watch -n 2"
